@@ -71,6 +71,18 @@ int main(int argc, const char **argv)
     std::cout<<" end_y :  "<<std::endl;
     std::cin>>end_y;
 
+// Check if valid coordinates are provided
+    if(start_x  < 0 || start_x  > 100.0 
+    || start_y < 0. || start_y  > 100.0
+    || end_x  < 0   || end_x  > 100.0
+    || end_y  < 0   || end_y  > 100.0)
+    {
+        std::cout<<"Please provide valid coordinates"<<std::endl;
+        return 0;
+    }
+
+
+
     // Build Model.
     RouteModel model{osm_data};
 
